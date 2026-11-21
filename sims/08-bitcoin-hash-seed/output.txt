@@ -1,0 +1,60 @@
+=== A. Bitcoin-hash seed, cap 13: payout change when the frozen window differs by d shares ===
+  attacker                d  payout differs  mean |change| %  gain after 10% uncle penalty
+  20% in 400 addresses    1           46.7%            0.776                        0.017%
+  20% in 400 addresses    3           70.7%            1.306                        0.125%
+  5% in 50 addresses      1           26.5%            0.176                        0.000%
+  5% in 50 addresses      3           38.3%            0.256                        0.000%
+  1.5%, 1 address         1            9.9%            0.003                        0.000%
+  1.5%, 1 address         3           14.0%            0.005                        0.000%
+
+=== B. Bitcoin-hash seed: discarding a found block to veto the next seed ===
+  discarding pays when  pi*(E[X] - X_next) > (1-pi)*X_now + pi*share_s/600
+  (pi = the pool's share of network hashrate)
+
+   cap attacker               pool share  blocks vetoed  revenue gain
+    13 20% in 400 addresses        0.15%          1.45%       0.0002%
+    13 20% in 400 addresses       35.00%          1.93%       0.0471%
+    13 5% in 50 addresses          0.15%         20.35%       0.0010%
+    13 5% in 50 addresses         35.00%         20.31%       0.2384%
+    13 1.5%, 1 address             0.15%          0.00%       0.0000%
+    13 1.5%, 1 address            35.00%          0.00%       0.0000%
+    60 20% in 400 addresses        0.15%          0.00%       0.0000%
+    60 20% in 400 addresses       35.00%          0.00%       0.0000%
+    60 5% in 50 addresses          0.15%          0.02%       0.0000%
+    60 5% in 50 addresses         35.00%          0.04%       0.0001%
+    60 1.5%, 1 address             0.15%          0.00%       0.0000%
+    60 1.5%, 1 address            35.00%          0.00%       0.0000%
+
+  share of pool blocks discarded if every single-address tail miner plays it
+  network    cap  prize%    5 s shares   10 s shares   20 s shares   40 s shares
+  mainnet     13    6.50        12.66%         7.47%         0.00%         0.00%
+  mainnet     19    3.90         7.02%         3.13%         0.00%         0.00%
+  mainnet     60    0.80         0.00%         0.00%         0.00%         0.00%
+  testnet5    13    4.64        10.30%         4.51%         0.48%         0.00%
+  testnet5    19    2.67         3.81%         0.61%         0.00%         0.00%
+  testnet5    60    0.19         0.00%         0.00%         0.00%         0.00%
+
+=== C. Bitcoin-hash seed WITHOUT a frozen window: steering new shares onto winning addresses ===
+  population                        attacker  slots won, fair  steered  prize%  revenue gain
+  mainnet                 5% in 50 addresses             0.70     0.71    6.67          1.7%
+  mainnet               20% in 400 addresses             2.66     2.94    7.10          9.9%
+  mostly small miners     5% in 50 addresses             0.85     0.88    5.74          2.6%
+  mostly small miners   20% in 400 addresses             3.25     3.56    6.07          9.3%
+  With the window frozen before the seed is known this is zero by construction.
+
+=== D. conditional hopping: revenue gain from mining here only while the current raffle favours you ===
+  calibration, honest miner (should be 0):
+    per-share seed: -0.09%   (window weight 20.3%)
+    Bitcoin-hash seed: +0.36%   (window weight 20.0%)
+
+   cap attacker                per-share seed  Bitcoin-hash seed  same, 2% fee elsewhere  weight left
+    13 20%, 1 address                   0.00%             -0.00%                   0.00%        19.8%
+    13 20% in 400 addresses            -0.06%              2.68%                   2.83%        12.5%
+    13 5% in 50 addresses               0.06%              0.12%                  -0.07%         0.0%
+    13 1.5%, 1 address                  0.03%              0.33%                  -0.02%         0.5%
+    60 20% in 400 addresses            -0.00%              0.95%                   0.45%        10.8%
+
+  Bitcoin-hash seed: hopping plus rented hashrate while in the money (rental priced 5% above fair value)
+   cap attacker                rent 1x own  rent 3x own
+    13 20% in 400 addresses          5.36%       11.04%
+    13 5% in 50 addresses            1.14%        4.42%

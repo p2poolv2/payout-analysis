@@ -1,0 +1,9 @@
+=== A. adaptive rule vs a numerical lower bound on raffle variance ===
+  40 random populations and caps: largest relative gap between the rule and the bound = 1.0e-04
+
+=== B. integer reference implementation, cap 13, noisy windows ===
+  rank 1-4     paid / fair share = 1.0000 +- 0.0000
+  rank 5-12    paid / fair share = 0.9993 +- 0.0005
+  rank 13-40   paid / fair share = 1.0005 +- 0.0007
+  rank 41+     paid / fair share = 1.0024 +- 0.0023
+  168 miners, 20,000-share windows, 240,000 blocks: every block paid exactly the reward, never more than 13 outputs

@@ -1,0 +1,205 @@
+shares are of POOL hashrate (mainnet pool = 1 EH/s = 0.1% of the network): 1% = 10 PH/s, 0.1% = 1 PH/s, S21 = 200 TH/s = 0.02%, S19 = 95 TH/s = 0.0095%
+=== A. the two populations (both pools are 1 EH/s) ===
+                                            500 miners    1,000 miners
+  largest miner                                  13.9%           11.9%
+  hashrate of the 29 largest                     78.5%           71.8%
+  hashrate of the smallest half                 3.655%          5.366%
+  hashrate outside the 29 largest                21.5%           28.2%
+  miners at or below 200 TH/s                      246             746
+  their share of pool hashrate                    3.5%           10.3%
+  miners with one S19                              129             439
+  share of pool hashrate by class:
+    4 farms                                  48.3% (4)       41.5% (4)
+    25 small farms (3-30 PH/s)              30.2% (25)      30.2% (25)
+    250 miners with 2-20 machines          18.4% (250)     18.4% (250)
+    miners with one machine                 3.1% (221)      9.8% (721)
+  the four farms of the 1,000-miner pool hold 11.9%, 11.5%, 11.4%, 6.6% of the pool
+
+=== B. each option, by miner count (mainnet block rate) ===
+  days = mean days between payouts for a miner with that share; spread = sd / mean of a year's income
+
+ cap 13
+  scheme                          miners     N+M  prize% exact  days 1%  days 0.1%  days S21  days S19  spread 0.1%  spread S19  spread 2%  raffle var
+  option 1 (top + 1 random)          500  12+1     33.71    12    238.6     2345.0   11706.5   24640.1         253%        822%      13.8%     0.11237
+  option 1 (top + 1 random)        1,000  12+1     40.45    12    285.0     2813.0   14048.2   29570.6         278%        900%      13.8%     0.16238
+  option 2 adaptive                  500   4+9      5.75     4     40.3      399.5    1996.0    4201.6         105%        339%      23.6%     0.02427
+  option 2 adaptive                1,000   4+9      6.50     4     45.4      451.5    2256.2    4749.4         111%        361%      25.0%     0.03251
+  option 3, evenly spaced draw       500   0+13     7.69     4     53.4      534.2    2670.9    5623.0         121%        392%      27.1%     0.03756
+  option 3, evenly spaced draw     1,000   0+13     7.69     3     53.4      534.2    2670.9    5623.0         121%        392%      27.1%     0.04463
+
+ cap 60
+  scheme                          miners     N+M  prize% exact  days 1%  days 0.1%  days S21  days S19  spread 0.1%  spread S19  spread 2%  raffle var
+  option 1 (top + 1 random)          500  59+1     16.67    59      6.9     1162.8    5791.1   12185.3         178%        578%      13.8%     0.02767
+  option 1 (top + 1 random)        1,000  59+1     23.41    59      6.9     1630.8    8132.8   17115.9         211%        685%      13.8%     0.05470
+  option 2 adaptive                  500  19+41     0.64    19      6.9       44.5     222.0     467.3          35%        113%      13.8%     0.00125
+  option 2 adaptive                1,000  19+41     0.80    19      6.9       55.9     279.1     587.5          39%        127%      13.8%     0.00221
+  option 3, evenly spaced draw       500   0+60     1.67    12     11.6      115.7     578.7    1218.3          56%        183%      14.5%     0.00487
+  option 3, evenly spaced draw     1,000   0+60     1.67    12     11.6      115.7     578.7    1218.3          56%        183%      14.5%     0.00593
+
+=== C. payout variance by hashrate share and miner count ===
+
+ cap 13: variance of income relative to an uncapped coinbase (1.0 = no added variance)
+    share       option 1, 500     option 1, 1,000       option 2, 500     option 2, 1,000       option 3, 500     option 3, 1,000
+      S19              3548.2              4258.2               605.0               683.9               809.7               809.7
+      S21              1685.7              2022.9               287.4               324.9               384.6               384.6
+     0.1%               337.7               405.1                57.5                65.0                76.9                76.9
+     0.2%               169.2               202.8                28.8                32.5                38.5                38.5
+     0.5%                68.1                81.5                11.5                13.0                15.4                15.4
+     1.0%                34.4                41.0                 5.8                 6.5                 7.7                 7.7
+     2.0%                 1.0                 1.0                 2.9                 3.3                 3.8                 3.8
+     5.0%                 1.0                 1.0                 1.2                 1.3                 1.5                 1.5
+    10.0%                 1.0                 1.0                 1.0                 1.0                 1.1                 1.1
+    20.0%                 1.0                 1.0                 1.0                 1.0                 1.0                 1.0
+    30.0%                 1.0                 1.0                 1.0                 1.0                 1.0                 1.0
+
+ cap 13: spread of one year's income, sd / mean (no cap: 13.8%)
+    share       option 1, 500     option 1, 1,000       option 2, 500     option 2, 1,000       option 3, 500     option 3, 1,000
+      S19              821.6%              900.1%              339.3%              360.7%              392.5%              392.5%
+      S21              566.3%              620.4%              233.8%              248.6%              270.5%              270.5%
+     0.1%              253.5%              277.6%              104.6%              111.2%              121.0%              121.0%
+     0.2%              179.4%              196.4%               74.0%               78.7%               85.5%               85.5%
+     0.5%              113.8%              124.5%               46.9%               49.8%               54.1%               54.1%
+     1.0%               80.9%               88.4%               33.2%               35.3%               38.3%               38.3%
+     2.0%               13.8%               13.8%               23.6%               25.0%               27.1%               27.1%
+     5.0%               13.8%               13.8%               15.1%               15.9%               17.1%               17.1%
+    10.0%               13.8%               13.8%               13.8%               13.8%               14.6%               14.6%
+    20.0%               13.8%               13.8%               13.8%               13.8%               14.0%               14.0%
+    30.0%               13.8%               13.8%               13.8%               13.8%               13.8%               13.8%
+
+ cap 13: mean days between payouts (no cap: 6.9)
+    share       option 1, 500     option 1, 1,000       option 2, 500     option 2, 1,000       option 3, 500     option 3, 1,000
+      S19             24640.1             29570.6              4201.6              4749.4              5623.0              5623.0
+      S21             11706.5             14048.2              1996.0              2256.2              2670.9              2670.9
+     0.1%              2345.0              2813.0               399.5               451.5               534.2               534.2
+     0.2%              1174.8              1408.5               199.9               225.9               267.1               267.1
+     0.5%               472.7               565.9                80.2                90.6               106.8               106.8
+     1.0%               238.6               285.0                40.3                45.4                53.4                53.4
+     2.0%                 6.9                 6.9                20.3                22.8                26.7                26.7
+     5.0%                 6.9                 6.9                 8.4                 9.3                10.7                10.7
+    10.0%                 6.9                 6.9                 6.9                 6.9                 6.9                 6.9
+    20.0%                 6.9                 6.9                 6.9                 6.9                 6.9                 6.9
+    30.0%                 6.9                 6.9                 6.9                 6.9                 6.9                 6.9
+
+ cap 60: variance of income relative to an uncapped coinbase (1.0 = no added variance)
+    share       option 1, 500     option 1, 1,000       option 2, 500     option 2, 1,000       option 3, 500     option 3, 1,000
+      S19              1754.7              2464.7                67.3                84.6               175.4               175.4
+      S21               833.9              1171.1                32.0                40.2                83.3                83.3
+     0.1%               167.4               234.8                 6.4                 8.1                16.7                16.7
+     0.2%                 1.0                 1.0                 3.2                 4.0                 8.3                 8.3
+     0.5%                 1.0                 1.0                 1.3                 1.6                 3.3                 3.3
+     1.0%                 1.0                 1.0                 1.0                 1.0                 1.7                 1.7
+     2.0%                 1.0                 1.0                 1.0                 1.0                 1.1                 1.1
+     5.0%                 1.0                 1.0                 1.0                 1.0                 1.0                 1.0
+    10.0%                 1.0                 1.0                 1.0                 1.0                 1.0                 1.0
+    20.0%                 1.0                 1.0                 1.0                 1.0                 1.0                 1.0
+    30.0%                 1.0                 1.0                 1.0                 1.0                 1.0                 1.0
+
+ cap 60: spread of one year's income, sd / mean (no cap: 13.8%)
+    share       option 1, 500     option 1, 1,000       option 2, 500     option 2, 1,000       option 3, 500     option 3, 1,000
+      S19              577.8%              684.8%              113.1%              126.9%              182.7%              182.7%
+      S21              398.3%              472.0%               78.0%               87.4%              125.9%              125.9%
+     0.1%              178.5%              211.4%               34.9%               39.1%               56.3%               56.3%
+     0.2%               13.8%               13.8%               24.7%               27.7%               39.8%               39.8%
+     0.5%               13.8%               13.8%               15.7%               17.6%               25.2%               25.2%
+     1.0%               13.8%               13.8%               13.8%               13.8%               17.8%               17.8%
+     2.0%               13.8%               13.8%               13.8%               13.8%               14.5%               14.5%
+     5.0%               13.8%               13.8%               13.8%               13.8%               13.8%               13.8%
+    10.0%               13.8%               13.8%               13.8%               13.8%               13.8%               13.8%
+    20.0%               13.8%               13.8%               13.8%               13.8%               13.8%               13.8%
+    30.0%               13.8%               13.8%               13.8%               13.8%               13.8%               13.8%
+
+ cap 60: mean days between payouts (no cap: 6.9)
+    share       option 1, 500     option 1, 1,000       option 2, 500     option 2, 1,000       option 3, 500     option 3, 1,000
+      S19             12185.3             17115.9               467.3               587.5              1218.3              1218.3
+      S21              5791.1              8132.8               222.0               279.1               578.7               578.7
+     0.1%              1162.8              1630.8                44.5                55.9               115.7               115.7
+     0.2%                 6.9                 6.9                22.3                28.0                57.9                57.9
+     0.5%                 6.9                 6.9                 9.0                11.3                23.1                23.1
+     1.0%                 6.9                 6.9                 6.9                 6.9                11.6                11.6
+     2.0%                 6.9                 6.9                 6.9                 6.9                 6.9                 6.9
+     5.0%                 6.9                 6.9                 6.9                 6.9                 6.9                 6.9
+    10.0%                 6.9                 6.9                 6.9                 6.9                 6.9                 6.9
+    20.0%                 6.9                 6.9                 6.9                 6.9                 6.9                 6.9
+    30.0%                 6.9                 6.9                 6.9                 6.9                 6.9                 6.9
+
+=== D. how many miners are served (option 2 adaptive) ===
+   cap  miners  paid exactly  raffle prizes a year  tail miners  >=50% chance of a payout in a year            in 30 days
+    13     500             4                   473          496        137 (27.4% of miners, 91.4% of hashrate)          17 (3.4% of miners, 72.1% of hashrate)
+    13   1,000             4                   473          996        102 (10.2% of miners, 81.8% of hashrate)          16 (1.6% of miners, 64.4% of hashrate)
+    60     500            19                  2155          481      500 (100.0% of miners, 100.0% of hashrate)         98 (19.6% of miners, 88.1% of hashrate)
+    60   1,000            19                  2155          981        561 (56.1% of miners, 95.8% of hashrate)          73 (7.3% of miners, 78.5% of hashrate)
+
+=== E. one share on mainnet (2-week window, 2 pool blocks expected) ===
+   cap  miners  prize%  chance the share ever pays
+    13     500    5.75                      0.029%
+    13   1,000    6.50                      0.026%
+    60     500    0.64                      0.260%
+    60   1,000    0.80                      0.207%
+
+=== G. option 2 adaptive, small miners: mean days between payouts / chance of no payout in 30 days ===
+     share        cap 13, 500 miners      cap 13, 1,000 miners        cap 60, 500 miners      cap 60, 1,000 miners
+        1%              40.3 / 47.5%              45.4 / 51.7%               6.9 /  1.3%               6.9 /  1.3%
+      0.1%             399.5 / 92.8%             451.5 / 93.6%              44.5 / 51.0%              55.9 / 58.5%
+       S21            1996.0 / 98.5%            2256.2 / 98.7%             222.0 / 87.4%             279.1 / 89.8%
+       S19            4201.6 / 99.3%            4749.4 / 99.4%             467.3 / 93.8%             587.5 / 95.0%
+
+=== F. seed grinding by miner count (tip choice among 3 older tips + withholding, 10% uncle penalty) ===
+   cap                attacker                        scheme            500 miners          1,000 miners
+    13    20% in 400 addresses     option 1 (top + 1 random)        13.18% + 8.41%       19.07% + 11.14%
+    13    20% in 400 addresses             option 2 adaptive         3.25% + 1.66%         4.34% + 2.24%
+    13      5% in 50 addresses     option 1 (top + 1 random)         8.16% + 3.29%         9.21% + 3.56%
+    13      5% in 50 addresses             option 2 adaptive         0.86% + 0.33%         1.08% + 0.42%
+    60    20% in 400 addresses     option 1 (top + 1 random)         2.68% + 2.29%        10.71% + 7.11%
+    60    20% in 400 addresses             option 2 adaptive         0.00% + 0.00%         0.07% + 0.03%
+    60      5% in 50 addresses     option 1 (top + 1 random)         4.49% + 2.01%         6.26% + 2.69%
+    60      5% in 50 addresses             option 2 adaptive         0.00% + 0.00%         0.00% + 0.00%
+    13    20% in 400 addresses  option 3, evenly spaced draw         4.56% + 2.33%         4.87% + 2.49%
+    13      5% in 50 addresses  option 3, evenly spaced draw         1.36% + 0.52%         1.36% + 0.51%
+    60    20% in 400 addresses  option 3, evenly spaced draw         0.21% + 0.09%         0.35% + 0.15%
+    60      5% in 50 addresses  option 3, evenly spaced draw         0.01% + 0.00%         0.01% + 0.00%
+
+=== H. sensitivity to the two modelling assumptions ===
+
+ H1. which miners make up a 500-miner pool
+  population                  largest  top 29  cap                        scheme     N+M  prize%  days 1%  days 0.1%    days S19  spread 0.1%
+  500, fewer single machines    13.9%   78.5%   13     option 1 (top + 1 random)  12+1     33.71    238.6     2345.0     24640.1         253%
+  500, every second miner       22.4%   77.8%   13     option 1 (top + 1 random)  12+1     28.58    203.4     1989.0     20889.8         233%
+  1,000                         11.9%   71.8%   13     option 1 (top + 1 random)  12+1     40.45    285.0     2813.0     29570.6         278%
+  500, fewer single machines    13.9%   78.5%   13             option 2 adaptive   4+9      5.75     40.3      399.5      4201.6         105%
+  500, every second miner       22.4%   77.8%   13             option 2 adaptive   3+10     5.05     35.4      350.9      3690.2          98%
+  1,000                         11.9%   71.8%   13             option 2 adaptive   4+9      6.50     45.4      451.5      4749.4         111%
+  500, fewer single machines    13.9%   78.5%   13  option 3, evenly spaced draw   0+13     7.69     53.4      534.2      5623.0         121%
+  500, every second miner       22.4%   77.8%   13  option 3, evenly spaced draw   0+13     7.69     53.4      534.2      5623.0         121%
+  1,000                         11.9%   71.8%   13  option 3, evenly spaced draw   0+13     7.69     53.4      534.2      5623.0         121%
+  500, fewer single machines    13.9%   78.5%   60     option 1 (top + 1 random)  59+1     16.67      6.9     1162.8     12185.3         178%
+  500, every second miner       22.4%   77.8%   60     option 1 (top + 1 random)  59+1     15.88      6.9     1107.8     11605.1         174%
+  1,000                         11.9%   71.8%   60     option 1 (top + 1 random)  59+1     23.41      6.9     1630.8     17115.9         211%
+  500, fewer single machines    13.9%   78.5%   60             option 2 adaptive  19+41     0.64      6.9       44.5       467.3          35%
+  500, every second miner       22.4%   77.8%   60             option 2 adaptive  14+46     0.59      6.9       40.9       429.5          33%
+  1,000                         11.9%   71.8%   60             option 2 adaptive  19+41     0.80      6.9       55.9       587.5          39%
+  500, fewer single machines    13.9%   78.5%   60  option 3, evenly spaced draw   0+60     1.67     11.6      115.7      1218.3          56%
+  500, every second miner       22.4%   77.8%   60  option 3, evenly spaced draw   0+60     1.67     11.6      115.7      1218.3          56%
+  1,000                         11.9%   71.8%   60  option 3, evenly spaced draw   0+60     1.67     11.6      115.7      1218.3          56%
+
+  miners with >= 50% chance of a payout in a year (option 2 adaptive)
+  cap  13  500, fewer single machines  137 (27.4% of miners, 91.4% of hashrate)
+  cap  13  500, every second miner     108 (21.6% of miners, 89.3% of hashrate)
+  cap  13  1,000                       102 (10.2% of miners, 81.8% of hashrate)
+  cap  60  500, fewer single machines  500 (100.0% of miners, 100.0% of hashrate)
+  cap  60  500, every second miner     500 (100.0% of miners, 100.0% of hashrate)
+  cap  60  1,000                       561 (56.1% of miners, 95.8% of hashrate)
+
+ H2. do the attacker's addresses count toward the 1,000-miner limit?
+  (tip choice among 3 older tips + withholding, 10% uncle penalty; option 2 adaptive, 1,000 honest miners)
+   cap                attacker    counted: 1,000 addresses   not counted: 1,000 + attacker
+    13    20% in 400 addresses    1000 addr: 4.30% + 2.19%        1400 addr: 4.44% + 2.28%
+    13      5% in 50 addresses    1000 addr: 1.11% + 0.44%        1050 addr: 1.08% + 0.42%
+    60    20% in 400 addresses    1000 addr: 0.07% + 0.03%        1400 addr: 0.10% + 0.04%
+    60      5% in 50 addresses    1000 addr: 0.00% + 0.00%        1050 addr: 0.00% + 0.00%
+
+  prize and waits for honest miners when a 20% miner in 400 addresses is present (option 2 adaptive)
+   cap  addresses     N+M  prize%  days 0.1%  days S19
+    13       1000   3+10     7.10      492.9    5188.1
+    13       1400   3+10     7.21      500.5    5268.7
+    60       1000  13+47     1.05       73.0     768.8
+    60       1400  12+48     1.09       75.8     797.4

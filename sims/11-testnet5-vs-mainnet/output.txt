@@ -1,0 +1,51 @@
+Shares are of pool hashrate. On mainnet: 1% = 10 PH/s, 0.1% = 1 PH/s, S21 = 200 TH/s = 0.02%, S19 = 95 TH/s = 0.0095%
+=== A. the two settings ===
+                            testnet5     mainnet
+  miners (assumed)               124        1000
+  pool blocks per day           50.0        0.14
+  pool blocks per 30 d          1500         4.3
+  days between blocks           0.02        6.94
+  largest miner                19.0%       11.9%
+
+=== B. cap 13: what each option does on each network ===
+
+ testnet5: mean days between payouts / chance of no payout in 30 days / spread of 30-day income (sd / mean)
+  scheme                         exact  prize%                1% of pool              0.1% of pool             0.02% of pool           0.0095% of pool
+  no cap                           124              0.02 /  0.0% /    3%      0.02 /  0.0% /    3%      0.02 /  0.0% /    3%      0.02 /  0.0% /    3%
+  option 1 (top + 1 random)         12   20.83      0.43 /  0.0% /   12%      4.18 /  0.1% /   37%     20.84 / 23.7% /   83%     43.87 / 50.5% /  121%
+  option 3, evenly spaced draw       4    7.69      0.15 /  0.0% /    7%      1.54 /  0.0% /   23%      7.69 /  2.0% /   51%     16.19 / 15.7% /   73%
+  option 2 adaptive                  4    4.64      0.09 /  0.0% /    6%      0.93 /  0.0% /   18%      4.64 /  0.2% /   39%      9.76 /  4.6% /   57%
+
+ mainnet: mean days between payouts / chance of no payout in 30 days / spread of 30-day income (sd / mean)
+  scheme                         exact  prize%                1% of pool              0.1% of pool             0.02% of pool           0.0095% of pool
+  no cap                          1000              6.94 /  1.3% /   48%      6.94 /  1.3% /   48%      6.94 /  1.3% /   48%      6.94 /  1.3% /   48%
+  option 1 (top + 1 random)         12   40.45    285.02 / 90.0% /  308%   2812.95 / 98.9% /  968%   14048.22 / 99.8% / 2164%   29570.64 / 99.9% / 3140%
+  option 3, evenly spaced draw       3    7.69     53.42 / 57.0% /  133%    534.19 / 94.5% /  422%   2670.94 / 98.9% /  944%   5623.03 / 99.5% / 1369%
+  option 2 adaptive                  4    6.50     45.44 / 51.7% /  123%    451.49 / 93.6% /  388%   2256.15 / 98.7% /  867%   4749.44 / 99.4% / 1258%
+
+=== B. cap 60: what each option does on each network ===
+
+ testnet5: mean days between payouts / chance of no payout in 30 days / spread of 30-day income (sd / mean)
+  scheme                         exact  prize%                1% of pool              0.1% of pool             0.02% of pool           0.0095% of pool
+  no cap                           124              0.02 /  0.0% /    3%      0.02 /  0.0% /    3%      0.02 /  0.0% /    3%      0.02 /  0.0% /    3%
+  option 1 (top + 1 random)         59    1.86      0.02 /  0.0% /    3%      0.02 /  0.0% /    3%      1.88 /  0.0% /   25%      3.93 /  0.0% /   36%
+  option 3, evenly spaced draw      13    1.67      0.03 /  0.0% /    3%      0.33 /  0.0% /   11%      1.67 /  0.0% /   24%      3.51 /  0.0% /   34%
+  option 2 adaptive                 33    0.19      0.02 /  0.0% /    3%      0.04 /  0.0% /    4%      0.19 /  0.0% /    8%      0.40 /  0.0% /   11%
+
+ mainnet: mean days between payouts / chance of no payout in 30 days / spread of 30-day income (sd / mean)
+  scheme                         exact  prize%                1% of pool              0.1% of pool             0.02% of pool           0.0095% of pool
+  no cap                          1000              6.94 /  1.3% /   48%      6.94 /  1.3% /   48%      6.94 /  1.3% /   48%      6.94 /  1.3% /   48%
+  option 1 (top + 1 random)         59   23.41      6.94 /  1.3% /   48%   1630.82 / 98.2% /  737%   8132.83 / 99.6% / 1646%   17115.86 / 99.8% / 2389%
+  option 3, evenly spaced draw      12    1.67     11.57 /  7.5% /   62%    115.74 / 77.2% /  196%    578.70 / 94.9% /  439%   1218.32 / 97.6% /  637%
+  option 2 adaptive                 19    0.80      6.94 /  1.3% /   48%     55.92 / 58.5% /  137%    279.13 / 89.8% /  305%    587.51 / 95.0% /  443%
+
+=== C. option 2 adaptive: how much of the pool is served within 30 days ===
+  network     cap  miners with >=50% chance of a payout   their share of hashrate
+  testnet5     13                                100.0%                    100.0%
+  testnet5     60                                100.0%                    100.0%
+  mainnet      13                                  1.6%                     64.4%
+  mainnet      60                                  7.3%                     78.5%
+
+=== D. smallest cap at which every miner is paid in every block ===
+  testnet5: 124 outputs (one per miner in the window)
+  mainnet: 1000 outputs (one per miner in the window)

@@ -1,0 +1,156 @@
+
+=== A. testnet5: 124 miners, 350.0 pool blocks a week, largest 19.0%, median 0.0634% ===
+ shares are of pool hashrate; S21 and S19 here mean 0.02% and 0.0095% of the pool
+
+ cap 13: mean days between payouts by pool share (with no cap: 0.02 days)
+  scheme                                    N+M  prize% exact         1%       0.1%        S21        S19 raffle var paid>=50%
+  option 1 (top + 1 random)              12+1     20.83    12        0.4        4.2       20.8       43.9    0.04162     19.4%
+  option 2 fixed, 2 independent draws    11+2     11.34    11        0.2        2.3       11.4       23.9    0.02466     31.5%
+  option 2 fixed, 2 evenly spaced        11+2     11.34    11        0.2        2.3       11.3       23.9    0.02360     31.5%
+  option 2 fixed, 6 evenly spaced         7+6      5.35     7        0.1        1.1        5.4       11.3    0.01280     45.2%
+  option 3, independent draws             0+13     7.69     0        0.2        1.5        7.7       16.2    0.06927     39.5%
+  option 3, evenly spaced draw            0+13     7.69     4        0.2        1.5        7.7       16.2    0.02779     39.5%
+  option 2 adaptive                       4+9      4.64     4        0.1        0.9        4.6        9.8    0.01185     49.2%
+
+ cap 60: mean days between payouts by pool share (with no cap: 0.02 days)
+  scheme                                    N+M  prize% exact         1%       0.1%        S21        S19 raffle var paid>=50%
+  option 1 (top + 1 random)              59+1      1.86    59        0.0        0.0        1.9        3.9    0.00034     73.4%
+  option 2 fixed, 12 independent draws   48+12     0.23    48        0.0        0.1        0.2        0.5    0.00006    100.0%
+  option 2 fixed, 12 evenly spaced       48+12     0.23    48        0.0        0.0        0.2        0.5    0.00005    100.0%
+  option 2 fixed, 30 evenly spaced       30+30     0.19    33        0.0        0.0        0.2        0.4    0.00005    100.0%
+  option 3, independent draws             0+60     1.67     0        0.0        0.3        1.7        3.5    0.01501     75.0%
+  option 3, evenly spaced draw            0+60     1.67    13        0.0        0.3        1.7        3.5    0.00226     75.0%
+  option 2 adaptive                      33+27     0.19    33        0.0        0.0        0.2        0.4    0.00004    100.0%
+
+ cap sweep, option 2 adaptive, testnet5
+     cap       N+M   prize%         1%       0.1%        S21        S19 paid>=50%
+      11     4+7      5.959        0.1        1.2        6.0       12.5     42.7%
+      13     4+9      4.635        0.1        0.9        4.6        9.8     49.2%
+      14     4+10     4.172        0.1        0.8        4.2        8.8     52.4%
+      19     7+12     2.675        0.1        0.5        2.7        5.6     64.5%
+      25    13+12     1.596        0.0        0.3        1.6        3.4     76.6%
+      60    33+27     0.188        0.0        0.0        0.2        0.4    100.0%
+      85    59+26     0.072        0.0        0.0        0.1        0.2    100.0%
+     100    80+20     0.038        0.0        0.0        0.0        0.1    100.0%
+     250   124+126    0.000        0.0        0.0        0.0        0.0    100.0%
+     500   124+376    0.000        0.0        0.0        0.0        0.0    100.0%
+
+=== A. mainnet: 1000 miners, 1.0 pool blocks a week, largest 11.9%, median 0.0200% ===
+ shares are of POOL hashrate (mainnet pool = 1 EH/s = 0.1% of the network): 1% = 10 PH/s, 0.1% = 1 PH/s, S21 = 200 TH/s = 0.02%, S19 = 95 TH/s = 0.0095%
+
+ cap 13: mean days between payouts by pool share (with no cap: 6.94 days)
+  scheme                                    N+M  prize% exact         1%       0.1%        S21        S19 raffle var paid>=50%
+  option 1 (top + 1 random)              12+1     40.45    12      285.0     2813.0    14048.2    29570.6    0.16238      2.3%
+  option 2 fixed, 2 independent draws    11+2     21.12    11      150.4     1470.3     7336.5    15441.2    0.08843      2.9%
+  option 2 fixed, 2 evenly spaced        11+2     21.12    11      148.7     1468.6     7334.8    15439.5    0.08764      2.9%
+  option 2 fixed, 6 evenly spaced         7+6      8.37     7       58.7      581.7     2906.2     6117.6    0.03884      9.0%
+  option 3, independent draws             0+13     7.69     0       56.7      537.4     2674.1     5626.2    0.07304      9.8%
+  option 3, evenly spaced draw            0+13     7.69     3       53.4      534.2     2670.9     5623.0    0.04463      9.8%
+  option 2 adaptive                       4+9      6.50     4       45.4      451.5     2256.2     4749.4    0.03251     10.2%
+
+ cap 60: mean days between payouts by pool share (with no cap: 6.94 days)
+  scheme                                    N+M  prize% exact         1%       0.1%        S21        S19 raffle var paid>=50%
+  option 1 (top + 1 random)              59+1     23.41    59        6.9     1630.8     8132.8    17115.9    0.05470      5.9%
+  option 2 fixed, 12 independent draws   48+12     2.09    48        6.9      148.5      727.9     1528.5    0.00521     25.4%
+  option 2 fixed, 12 evenly spaced       48+12     2.09    48        6.9      145.3      724.7     1525.3    0.00507     25.4%
+  option 2 fixed, 30 evenly spaced       30+30     0.94    30        6.9       65.1      325.0      684.0    0.00242     56.1%
+  option 3, independent draws             0+60     1.67     0       15.3      119.2      582.1     1221.7    0.01583     25.4%
+  option 3, evenly spaced draw            0+60     1.67    12       11.6      115.7      578.7     1218.3    0.00593     25.4%
+  option 2 adaptive                      19+41     0.80    19        6.9       55.9      279.1      587.5    0.00221     56.1%
+
+ cap sweep, option 2 adaptive, mainnet
+     cap       N+M   prize%         1%       0.1%        S21        S19 paid>=50%
+      11     3+8      8.137       56.8      565.3     2825.5     5948.0      9.0%
+      13     4+9      6.497       45.4      451.5     2256.2     4749.4     10.2%
+      14     4+10     5.848       40.9      406.3     2030.5     4274.5     12.2%
+      19     4+15     3.898       27.3      270.9     1353.7     2849.7     16.8%
+      25     6+19     2.767       19.4      192.3      961.0     2023.0     21.6%
+      60    19+41     0.804        6.9       55.9      279.1      587.5     56.1%
+      85    24+61     0.494        6.9       34.4      171.6      361.2    100.0%
+     100    26+74     0.395        6.9       27.5      137.1      288.6    100.0%
+     250    85+165    0.121        6.9        8.4       42.1       88.6    100.0%
+     500   191+309    0.040        6.9        6.9       13.9       29.1    100.0%
+
+ 'exact' = miners paid in every block; 'raffle var' = sum over miners of the variance the raffle adds;
+ 'paid>=50%' = share of miners with at least an even chance of one payout in the horizon
+ (1 day on testnet5, 365 days on mainnet).
+
+=== B. robustness: raffle variance relative to option 2 adaptive (= 1.00), 300 random populations per cap ===
+
+ cap 13
+  scheme                                     min  median     p90       max  prize>10%
+  option 1 (top + 1 random)                 1.41    4.35    7.67      10.6        89%
+  option 2 fixed, 2 evenly spaced           1.07    2.35    3.95       5.4        74%
+  option 2 fixed, 6 evenly spaced           1.00    1.12    1.51       2.3        26%
+  option 3, independent draws               1.04    3.19   20.65    7289.3         0%
+  option 3, evenly spaced draw              1.00    1.58    7.25     941.8         0%
+  option 2 adaptive                         1.00    1.00    1.00       1.0         0%
+
+ cap 60
+  scheme                                     min  median     p90       max  prize>10%
+  option 1 (top + 1 random)                 6.71   16.01   26.96      37.5        68%
+  option 2 fixed, 12 evenly spaced          1.07    1.70    2.50       3.3         0%
+  option 2 fixed, 30 evenly spaced          1.00    1.05    1.25       1.5         0%
+  option 3, independent draws               1.19    6.36   78.90     655.1         0%
+  option 3, evenly spaced draw              1.00    2.43   17.57     117.9         0%
+  option 2 adaptive                         1.00    1.00    1.00       1.0         0%
+
+ 'prize>10%' = share of populations where one raffle prize exceeds 10% of the block,
+ the uncle penalty that grinding has to beat.
+
+=== C. income over a horizon, realised / expected (Monte Carlo, 40,000 paths) ===
+
+ testnet5, 7 days, miner with 0.1% of the pool
+  scheme                          cap P(nothing)     p5  median    p95     CV
+  no cap (ideal)                   13      0.000   0.91    1.00   1.09   0.05
+  option 1 (top + 1 random)        13      0.184   0.00    1.19   2.38   0.77
+  option 3, evenly spaced draw     13      0.011   0.22    0.88   1.76   0.47
+  option 2 adaptive                13      0.000   0.40    0.93   1.59   0.36
+  no cap (ideal)                   60      0.000   0.91    1.00   1.09   0.05
+  option 1 (top + 1 random)        60      0.000   0.91    1.00   1.09   0.05
+  option 3, evenly spaced draw     60      0.000   0.67    1.00   1.38   0.22
+  option 2 adaptive                60      0.000   0.88    1.00   1.12   0.07
+
+ testnet5, 7 days, miner with 0.01% of the pool
+  scheme                          cap P(nothing)     p5  median    p95     CV
+  no cap (ideal)                   13      0.000   0.91    1.00   1.09   0.05
+  option 1 (top + 1 random)        13      0.848   0.00    0.00   5.95   2.43
+  option 3, evenly spaced draw     13      0.633   0.00    0.00   4.40   1.49
+  option 2 adaptive                13      0.471   0.00    1.32   2.65   1.15
+  no cap (ideal)                   60      0.000   0.91    1.00   1.09   0.05
+  option 1 (top + 1 random)        60      0.154   0.00    1.07   2.13   0.73
+  option 3, evenly spaced draw     60      0.126   0.00    0.95   2.38   0.69
+  option 2 adaptive                60      0.000   0.64    0.97   1.40   0.23
+
+ mainnet, 365 days, miner with 0.1% of the pool
+  scheme                          cap P(nothing)     p5  median    p95     CV
+  no cap (ideal)                   13      0.000   0.78    0.99   1.24   0.14
+  option 1 (top + 1 random)        13      0.878   0.00    0.00   7.70   2.79
+  option 3, evenly spaced draw     13      0.509   0.00    0.00   2.93   1.20
+  option 2 adaptive                13      0.446   0.00    1.24   2.47   1.11
+  no cap (ideal)                   60      0.000   0.78    0.99   1.24   0.14
+  option 1 (top + 1 random)        60      0.799   0.00    0.00   4.45   2.12
+  option 3, evenly spaced draw     60      0.043   0.32    0.95   1.90   0.57
+  option 2 adaptive                60      0.001   0.46    0.92   1.68   0.39
+
+ mainnet, 365 days, one S21 (0.02% of the pool)
+  scheme                          cap P(nothing)     p5  median    p95     CV
+  no cap (ideal)                   13      0.000   0.78    0.99   1.24   0.14
+  option 1 (top + 1 random)        13      0.973   0.00    0.00   0.00   6.32
+  option 3, evenly spaced draw     13      0.872   0.00    0.00   7.32   2.71
+  option 2 adaptive                13      0.846   0.00    0.00   6.18   2.51
+  no cap (ideal)                   60      0.000   0.78    0.99   1.24   0.14
+  option 1 (top + 1 random)        60      0.957   0.00    0.00   0.00   4.63
+  option 3, evenly spaced draw     60      0.529   0.00    0.00   3.17   1.27
+  option 2 adaptive                60      0.271   0.00    0.76   2.29   0.87
+
+ mainnet, 365 days, one S19 (0.0095% of the pool)
+  scheme                          cap P(nothing)     p5  median    p95     CV
+  no cap (ideal)                   13      0.000   0.78    0.99   1.24   0.14
+  option 1 (top + 1 random)        13      0.988   0.00    0.00   0.00   8.89
+  option 3, evenly spaced draw     13      0.939   0.00    0.00  15.41   3.90
+  option 2 adaptive                13      0.926   0.00    0.00  13.01   3.58
+  no cap (ideal)                   60      0.000   0.78    0.99   1.24   0.14
+  option 1 (top + 1 random)        60      0.979   0.00    0.00   0.00   6.82
+  option 3, evenly spaced draw     60      0.736   0.00    0.00   3.34   1.84
+  option 2 adaptive                60      0.536   0.00    0.00   3.22   1.27

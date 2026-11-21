@@ -1,0 +1,4 @@
+option 1 (top + 1 random), 3% as 30 addresses: expected payout / fair share = 0.9964 +- 0.0034
+option 1 (top + 1 random), 0.5% as 50 addresses: expected payout / fair share = 1.0143 +- 0.0085
+option 1 (top + 1 random), 0.5% as 10 addresses: expected payout / fair share = 1.0008 +- 0.0084
+option 3, evenly spaced draw, 3% as 1 address: expected payout / fair share = 1.0006 +- 0.0016

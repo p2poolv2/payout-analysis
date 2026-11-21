@@ -1,0 +1,229 @@
+Payout variance by hashrate share. A miner of the given size is put into the population in place
+of its smallest member; the other miners are scaled down to make room.
+shares are of POOL hashrate (mainnet pool = 1 EH/s = 0.1% of the network): 1% = 10 PH/s, 0.1% = 1 PH/s, S21 = 200 TH/s = 0.02%, S19 = 95 TH/s = 0.0095%
+
+--- mainnet, cap 13 ---
+ spread of ONE block's payout: standard deviation / mean
+    share   no cap            option 1   option 2 adaptive   option 3 (spaced)   option 3 (indep.)
+      S19     0.00               65.25               26.13               28.44               28.45
+      S21     0.00               44.97               18.00               19.59               19.61
+     0.1%     0.00               20.10                8.00                8.71                8.77
+     0.2%     0.00               14.21                5.62                6.12                6.20
+     0.5%     0.00                8.97                3.47                3.79                3.91
+     1.0%     0.00                6.33                2.35                2.59                2.76
+     2.0%     0.00                0.00                1.51                1.69                1.94
+     5.0%     0.00                0.00                0.58                0.73                1.21
+    10.0%     0.00                0.00                0.00                0.35                0.83
+    20.0%     0.00                0.00                0.00                0.19                0.55
+    30.0%     0.00                0.00                0.00                0.08                0.42
+
+ variance of income relative to an uncapped coinbase (1.0 = no added variance)
+    share   no cap            option 1   option 2 adaptive   option 3 (spaced)   option 3 (indep.)
+      S19      1.0              4258.2               683.9               809.7               810.6
+      S21      1.0              2022.9               324.9               384.6               385.5
+     0.1%      1.0               405.1                65.0                76.9                77.8
+     0.2%      1.0               202.8                32.5                38.5                39.4
+     0.5%      1.0                81.5                13.0                15.4                16.3
+     1.0%      1.0                41.0                 6.5                 7.7                 8.6
+     2.0%      1.0                 1.0                 3.3                 3.8                 4.8
+     5.0%      1.0                 1.0                 1.3                 1.5                 2.5
+    10.0%      1.0                 1.0                 1.0                 1.1                 1.7
+    20.0%      1.0                 1.0                 1.0                 1.0                 1.3
+    30.0%      1.0                 1.0                 1.0                 1.0                 1.2
+
+ spread of income over a year (53 pool blocks expected): standard deviation / mean, block luck included
+    share   no cap            option 1   option 2 adaptive   option 3 (spaced)   option 3 (indep.)
+      S19    13.8%              900.1%              360.7%              392.5%              392.7%
+      S21    13.8%              620.4%              248.6%              270.5%              270.8%
+     0.1%    13.8%              277.6%              111.2%              121.0%              121.7%
+     0.2%    13.8%              196.4%               78.7%               85.5%               86.6%
+     0.5%    13.8%              124.5%               49.8%               54.1%               55.7%
+     1.0%    13.8%               88.4%               35.3%               38.3%               40.5%
+     2.0%    13.8%               13.8%               25.0%               27.1%               30.1%
+     5.0%    13.8%               13.8%               15.9%               17.1%               21.6%
+    10.0%    13.8%               13.8%               13.8%               14.6%               17.9%
+    20.0%    13.8%               13.8%               13.8%               14.0%               15.8%
+    30.0%    13.8%               13.8%               13.8%               13.8%               15.0%
+
+ option 2 adaptive in detail (N+M shown for the population with this miner added)
+    share     N+M    paid chance/block payout if paid  sd/block days between     P(none in a year)
+      S19   4+9    raffle         0.1%          6.50%     0.25%       4749.4                 92.6%
+      S21   4+9    raffle         0.3%          6.50%     0.36%       2256.2                 85.1%
+     0.1%   4+9    raffle         1.5%          6.50%     0.80%        451.5                 44.6%
+     0.2%   4+9    raffle         3.1%          6.51%     1.12%        225.9                 19.9%
+     0.5%   4+9    raffle         7.7%          6.52%     1.73%         90.6                  1.8%
+     1.0%   4+9    raffle        15.3%          6.54%     2.35%         45.4                  0.0%
+     2.0%   3+10   raffle        30.4%          6.58%     3.03%         22.8                  0.0%
+     5.0%   3+10   raffle        74.8%          6.68%     2.90%          9.3                  0.0%
+    10.0%   4+9   exactly       100.0%         10.00%     0.00%          6.9                  0.0%
+    20.0%   4+9   exactly       100.0%         20.00%     0.00%          6.9                  0.0%
+    30.0%   4+9   exactly       100.0%         30.00%     0.00%          6.9                  0.0%
+
+--- mainnet, cap 60 ---
+ spread of ONE block's payout: standard deviation / mean
+    share   no cap            option 1   option 2 adaptive   option 3 (spaced)   option 3 (indep.)
+      S19     0.00               49.64                9.14               13.21               13.24
+      S21     0.00               34.21                6.26                9.07                9.13
+     0.1%     0.00               15.29                2.66                3.96                4.08
+     0.2%     0.00                0.00                1.74                2.71                2.88
+     0.5%     0.00                0.00                0.79                1.53                1.82
+     1.0%     0.00                0.00                0.00                0.82                1.28
+     2.0%     0.00                0.00                0.00                0.33                0.90
+     5.0%     0.00                0.00                0.00                0.00                0.56
+    10.0%     0.00                0.00                0.00                0.00                0.39
+    20.0%     0.00                0.00                0.00                0.00                0.26
+    30.0%     0.00                0.00                0.00                0.00                0.20
+
+ variance of income relative to an uncapped coinbase (1.0 = no added variance)
+    share   no cap            option 1   option 2 adaptive   option 3 (spaced)   option 3 (indep.)
+      S19      1.0              2464.7                84.6               175.4               176.4
+      S21      1.0              1171.1                40.2                83.3                84.3
+     0.1%      1.0               234.8                 8.1                16.7                17.7
+     0.2%      1.0                 1.0                 4.0                 8.3                 9.3
+     0.5%      1.0                 1.0                 1.6                 3.3                 4.3
+     1.0%      1.0                 1.0                 1.0                 1.7                 2.7
+     2.0%      1.0                 1.0                 1.0                 1.1                 1.8
+     5.0%      1.0                 1.0                 1.0                 1.0                 1.3
+    10.0%      1.0                 1.0                 1.0                 1.0                 1.1
+    20.0%      1.0                 1.0                 1.0                 1.0                 1.1
+    30.0%      1.0                 1.0                 1.0                 1.0                 1.0
+
+ spread of income over a year (53 pool blocks expected): standard deviation / mean, block luck included
+    share   no cap            option 1   option 2 adaptive   option 3 (spaced)   option 3 (indep.)
+      S19    13.8%              684.8%              126.9%              182.7%              183.2%
+      S21    13.8%              472.0%               87.4%              125.9%              126.7%
+     0.1%    13.8%              211.4%               39.1%               56.3%               57.9%
+     0.2%    13.8%               13.8%               27.7%               39.8%               42.1%
+     0.5%    13.8%               13.8%               17.6%               25.2%               28.7%
+     1.0%    13.8%               13.8%               13.8%               17.8%               22.5%
+     2.0%    13.8%               13.8%               13.8%               14.5%               18.6%
+     5.0%    13.8%               13.8%               13.8%               13.8%               15.8%
+    10.0%    13.8%               13.8%               13.8%               13.8%               14.8%
+    20.0%    13.8%               13.8%               13.8%               13.8%               14.2%
+    30.0%    13.8%               13.8%               13.8%               13.8%               14.1%
+
+ option 2 adaptive in detail (N+M shown for the population with this miner added)
+    share     N+M    paid chance/block payout if paid  sd/block days between     P(none in a year)
+      S19  19+41   raffle         1.2%          0.80%     0.09%        587.5                 53.7%
+      S21  19+41   raffle         2.5%          0.80%     0.13%        279.1                 27.0%
+     0.1%  19+41   raffle        12.4%          0.81%     0.27%         55.9                  0.1%
+     0.2%  19+41   raffle        24.8%          0.81%     0.35%         28.0                  0.0%
+     0.5%  19+41   raffle        61.6%          0.81%     0.39%         11.3                  0.0%
+     1.0%  20+40  exactly       100.0%          1.00%     0.00%          6.9                  0.0%
+     2.0%  20+40  exactly       100.0%          2.00%     0.00%          6.9                  0.0%
+     5.0%  20+40  exactly       100.0%          5.00%     0.00%          6.9                  0.0%
+    10.0%  20+40  exactly       100.0%         10.00%     0.00%          6.9                  0.0%
+    20.0%  20+40  exactly       100.0%         20.00%     0.00%          6.9                  0.0%
+    30.0%  20+40  exactly       100.0%         30.00%     0.00%          6.9                  0.0%
+
+--- testnet5, cap 13 ---
+ spread of ONE block's payout: standard deviation / mean
+    share   no cap            option 1   option 2 adaptive   option 3 (spaced)   option 3 (indep.)
+     0.1%     0.00               14.42                6.74                8.71                8.77
+     0.2%     0.00               10.19                4.72                6.12                6.20
+     0.5%     0.00                6.44                2.89                3.79                3.91
+     1.0%     0.00                4.54                1.92                2.59                2.76
+     2.0%     0.00                0.00                1.18                1.69                1.94
+     5.0%     0.00                0.00                0.00                0.73                1.21
+    10.0%     0.00                0.00                0.00                0.35                0.83
+    20.0%     0.00                0.00                0.00                0.19                0.55
+    30.0%     0.00                0.00                0.00                0.08                0.42
+
+ variance of income relative to an uncapped coinbase (1.0 = no added variance)
+    share   no cap            option 1   option 2 adaptive   option 3 (spaced)   option 3 (indep.)
+     0.1%      1.0               209.1                46.4                76.9                77.8
+     0.2%      1.0               104.9                23.2                38.5                39.4
+     0.5%      1.0                42.4                 9.3                15.4                16.3
+     1.0%      1.0                21.6                 4.7                 7.7                 8.6
+     2.0%      1.0                 1.0                 2.4                 3.8                 4.8
+     5.0%      1.0                 1.0                 1.0                 1.5                 2.5
+    10.0%      1.0                 1.0                 1.0                 1.1                 1.7
+    20.0%      1.0                 1.0                 1.0                 1.0                 1.3
+    30.0%      1.0                 1.0                 1.0                 1.0                 1.2
+
+ spread of income over a week (350 pool blocks expected): standard deviation / mean, block luck included
+    share   no cap            option 1   option 2 adaptive   option 3 (spaced)   option 3 (indep.)
+     0.1%     5.3%               77.3%               36.4%               46.9%               47.2%
+     0.2%     5.3%               54.8%               25.8%               33.1%               33.5%
+     0.5%     5.3%               34.8%               16.3%               21.0%               21.6%
+     1.0%     5.3%               24.9%               11.6%               14.8%               15.7%
+     2.0%     5.3%                5.3%                8.2%               10.5%               11.7%
+     5.0%     5.3%                5.3%                5.3%                6.6%                8.4%
+    10.0%     5.3%                5.3%                5.3%                5.7%                7.0%
+    20.0%     5.3%                5.3%                5.3%                5.4%                6.1%
+    30.0%     5.3%                5.3%                5.3%                5.4%                5.8%
+
+ option 2 adaptive in detail (N+M shown for the population with this miner added)
+    share     N+M    paid chance/block payout if paid  sd/block days between     P(none in a week)
+     0.1%   4+9    raffle         2.2%          4.64%     0.67%          0.9                  0.1%
+     0.2%   4+9    raffle         4.3%          4.65%     0.94%          0.5                  0.0%
+     0.5%   4+9    raffle        10.7%          4.67%     1.44%          0.2                  0.0%
+     1.0%   4+9    raffle        21.3%          4.70%     1.92%          0.1                  0.0%
+     2.0%   4+9    raffle        42.0%          4.76%     2.35%          0.0                  0.0%
+     5.0%   5+8   exactly       100.0%          5.00%     0.00%          0.0                  0.0%
+    10.0%   5+8   exactly       100.0%         10.00%     0.00%          0.0                  0.0%
+    20.0%   5+8   exactly       100.0%         20.00%     0.00%          0.0                  0.0%
+    30.0%   5+8   exactly       100.0%         30.00%     0.00%          0.0                  0.0%
+
+--- testnet5, cap 60 ---
+ spread of ONE block's payout: standard deviation / mean
+    share   no cap            option 1   option 2 adaptive   option 3 (spaced)   option 3 (indep.)
+     0.1%     0.00                0.00                0.96                3.96                4.08
+     0.2%     0.00                0.00                0.00                2.71                2.88
+     0.5%     0.00                0.00                0.00                1.53                1.82
+     1.0%     0.00                0.00                0.00                0.82                1.28
+     2.0%     0.00                0.00                0.00                0.33                0.90
+     5.0%     0.00                0.00                0.00                0.00                0.56
+    10.0%     0.00                0.00                0.00                0.00                0.39
+    20.0%     0.00                0.00                0.00                0.00                0.26
+    30.0%     0.00                0.00                0.00                0.00                0.20
+
+ variance of income relative to an uncapped coinbase (1.0 = no added variance)
+    share   no cap            option 1   option 2 adaptive   option 3 (spaced)   option 3 (indep.)
+     0.1%      1.0                 1.0                 1.9                16.7                17.6
+     0.2%      1.0                 1.0                 1.0                 8.3                 9.3
+     0.5%      1.0                 1.0                 1.0                 3.3                 4.3
+     1.0%      1.0                 1.0                 1.0                 1.7                 2.7
+     2.0%      1.0                 1.0                 1.0                 1.1                 1.8
+     5.0%      1.0                 1.0                 1.0                 1.0                 1.3
+    10.0%      1.0                 1.0                 1.0                 1.0                 1.1
+    20.0%      1.0                 1.0                 1.0                 1.0                 1.1
+    30.0%      1.0                 1.0                 1.0                 1.0                 1.0
+
+ spread of income over a week (350 pool blocks expected): standard deviation / mean, block luck included
+    share   no cap            option 1   option 2 adaptive   option 3 (spaced)   option 3 (indep.)
+     0.1%     5.3%                5.3%                7.4%               21.8%               22.5%
+     0.2%     5.3%                5.3%                5.3%               15.4%               16.3%
+     0.5%     5.3%                5.3%                5.3%                9.8%               11.1%
+     1.0%     5.3%                5.3%                5.3%                6.9%                8.7%
+     2.0%     5.3%                5.3%                5.3%                5.6%                7.2%
+     5.0%     5.3%                5.3%                5.3%                5.3%                6.1%
+    10.0%     5.3%                5.3%                5.3%                5.3%                5.7%
+    20.0%     5.3%                5.3%                5.3%                5.3%                5.5%
+    30.0%     5.3%                5.3%                5.3%                5.3%                5.4%
+
+ option 2 adaptive in detail (N+M shown for the population with this miner added)
+    share     N+M    paid chance/block payout if paid  sd/block days between     P(none in a week)
+     0.1%  33+27   raffle        52.3%          0.19%     0.10%          0.0                  0.0%
+     0.2%  33+27  exactly       100.0%          0.20%     0.00%          0.0                  0.0%
+     0.5%  33+27  exactly       100.0%          0.50%     0.00%          0.0                  0.0%
+     1.0%  33+27  exactly       100.0%          1.00%     0.00%          0.0                  0.0%
+     2.0%  33+27  exactly       100.0%          2.00%     0.00%          0.0                  0.0%
+     5.0%  33+27  exactly       100.0%          5.00%     0.00%          0.0                  0.0%
+    10.0%  33+27  exactly       100.0%         10.00%     0.00%          0.0                  0.0%
+    20.0%  33+27  exactly       100.0%         20.00%     0.00%          0.0                  0.0%
+    30.0%  33+27  exactly       100.0%         30.00%     0.00%          0.0                  0.0%
+
+--- Monte Carlo check of the closed forms (mainnet, cap 13, 40,000 blocks) ---
+    share                scheme  sd closed form  sd simulated  mean / fair
+     0.1%              option 1          2.010%        1.930%        0.922
+     0.1%     option 2 adaptive          0.800%        0.808%        1.021
+     0.1%     option 3 (spaced)          0.871%        0.859%        0.971
+     1.0%              option 1          6.328%        6.383%        1.018
+     1.0%     option 2 adaptive          2.354%        2.362%        1.008
+     1.0%     option 3 (spaced)          2.587%        2.600%        1.012
+     5.0%              option 1          0.000%        0.000%        1.000
+     5.0%     option 2 adaptive          2.902%        2.898%        1.001
+     5.0%     option 3 (spaced)          3.669%        3.674%        0.997
+
+charts written: spread_per_block.png, spread_per_year_mainnet.png

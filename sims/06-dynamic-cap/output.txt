@@ -1,0 +1,38 @@
+=== A. gain for a miner that picks 13 or 60 outputs per template (option 2 adaptive) ===
+relative revenue gain; 'tip choice' = also choosing among the 3 previous tips at a 10% uncle penalty
+  attacker                size choice only   tip choice only, 13  both together
+  20%, 1 address                     0.00%                 0.00%          0.00%
+  20% in 400 addresses               4.15%                 4.28%          5.89%
+  5% in 50 addresses                 2.36%                 1.13%          2.78%
+  1.5%, 1 address                    1.14%                -0.02%          1.14%
+
+ same size choice with option 1 as the base rule:
+  20% in 400 addresses              11.71%
+  5% in 50 addresses                 4.41%
+  1.5%, 1 address                    1.46%
+
+=== B. who pays: payouts on the blocks the choosing miner finds ===
+
+ chooser: 1.5%, 1 address (uses the small size on 22.8% of the blocks it finds)
+  group                           fair share  collects   change
+  the miner choosing                   1.50%     2.66%    +1.16
+  paid exactly at both sizes          34.38%    34.38%    +0.00
+  exact at 60, raffled at 13          31.66%    31.25%    -0.41
+  raffled at both sizes               32.45%    31.71%    -0.74
+  total                              100.00%   100.00%
+
+ chooser: 20% in 400 addresses (uses the small size on 49.3% of the blocks it finds)
+  group                           fair share  collects   change
+  the miner choosing                  20.00%    24.10%    +4.10
+  paid exactly at both sizes          29.03%    29.03%    -0.00
+  exact at 60, raffled at 13          21.55%    20.29%    -1.26
+  raffled at both sizes               29.43%    26.58%    -2.85
+  total                              100.00%   100.00%
+
+=== C. honest use: mean days between payouts when a share of blocks carries 60 outputs ===
+    blocks at 60 outputs         1%       0.1%        S21        S19   variance vs no cap: 0.1% of pool   one S19
+                      0%       45.4      451.5     2256.2     4749.4                              65.0x      684x
+                     20%       21.5      187.0      933.6     1965.2                              53.6x      564x
+                     50%       12.0       99.5      496.8     1045.7                              36.5x      384x
+                    100%        6.9       55.9      279.1      587.5                               8.1x       85x
+  shares are of POOL hashrate (mainnet pool = 1 EH/s = 0.1% of the network): 1% = 10 PH/s, 0.1% = 1 PH/s, S21 = 200 TH/s = 0.02%, S19 = 95 TH/s = 0.0095%

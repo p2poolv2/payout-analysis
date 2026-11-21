@@ -1,0 +1,126 @@
+=== A. the same hashrate held in one address or many, cap 13, 168 honest miners, 150,000 blocks per case ===
+EV/fair = expected payout / fair share (1.000 = splitting gains nothing);
+P(paid) = chance of any payout in a block; CV = spread of the per-block total.
+
+ miner: 0.5% as 1 address
+  scheme                                    EV/fair     +-  P(paid)     CV
+  option 1 (top + 1 random)                   0.991  0.017    0.023   6.57
+  option 2 fixed, 6 independent draws         1.012  0.009    0.084   3.35
+  option 2 fixed, 6 evenly spaced             1.002  0.008    0.087   3.25
+  option 2, 6 distinct, equal prizes          1.088  0.009    0.094   3.10
+  option 2, 6 distinct, pro rata              0.446  0.004    0.093   3.30
+  option 2, 6 distinct, redistribute          0.128  0.001    0.094   3.11
+  option 3, independent draws                 0.989  0.010    0.063   3.93
+  option 3, evenly spaced draw                0.996  0.010    0.065   3.80
+  option 2 adaptive                           1.005  0.008    0.099   3.01
+
+ miner: 0.5% as 10 addresses
+  scheme                                    EV/fair     +-  P(paid)     CV
+  option 1 (top + 1 random)                   0.967  0.017    0.022   6.66
+  option 2 fixed, 6 independent draws         0.993  0.009    0.083   3.39
+  option 2 fixed, 6 evenly spaced             1.002  0.009    0.084   3.35
+  option 2, 6 distinct, equal prizes          1.119  0.009    0.093   3.17
+  option 2, 6 distinct, pro rata              0.051  0.000    0.093   3.50
+  option 2, 6 distinct, redistribute          0.013  0.000    0.094   3.17
+  option 3, independent draws                 0.995  0.010    0.063   3.92
+  option 3, evenly spaced draw                0.999  0.010    0.063   3.89
+  option 2 adaptive                           1.004  0.008    0.096   3.14
+
+ miner: 0.5% as 50 addresses
+  scheme                                    EV/fair     +-  P(paid)     CV
+  option 1 (top + 1 random)                   0.966  0.017    0.022   6.66
+  option 2 fixed, 6 independent draws         1.001  0.009    0.083   3.38
+  option 2 fixed, 6 evenly spaced             0.999  0.009    0.083   3.37
+  option 2, 6 distinct, equal prizes          1.130  0.009    0.094   3.17
+  option 2, 6 distinct, pro rata              0.010  0.000    0.094   3.61
+  option 2, 6 distinct, redistribute          0.003  0.000    0.093   3.18
+  option 3, independent draws                 1.011  0.010    0.064   3.90
+  option 3, evenly spaced draw                0.998  0.010    0.063   3.91
+  option 2 adaptive                           1.001  0.008    0.095   3.16
+
+ miner: 3% as 1 address
+  scheme                                    EV/fair     +-  P(paid)     CV
+  option 1 (top + 1 random)                   1.000  0.000    1.000   0.00
+  option 2 fixed, 6 independent draws         1.000  0.004    0.404   1.36
+  option 2 fixed, 6 evenly spaced             1.001  0.003    0.496   1.01
+  option 2, 6 distinct, equal prizes          0.888  0.003    0.440   1.13
+  option 2, 6 distinct, pro rata              1.649  0.005    0.441   1.17
+  option 2, 6 distinct, redistribute          0.598  0.002    0.441   1.13
+  option 3, independent draws                 0.997  0.004    0.326   1.58
+  option 3, evenly spaced draw                0.992  0.003    0.387   1.26
+  option 2 adaptive                           1.003  0.002    0.578   0.86
+
+ miner: 3% as 30 addresses
+  scheme                                    EV/fair     +-  P(paid)     CV
+  option 1 (top + 1 random)                   0.984  0.007    0.124   2.66
+  option 2 fixed, 6 independent draws         1.002  0.004    0.405   1.36
+  option 2 fixed, 6 evenly spaced             0.998  0.003    0.407   1.35
+  option 2, 6 distinct, equal prizes          1.097  0.004    0.439   1.27
+  option 2, 6 distinct, pro rata              0.110  0.000    0.439   1.69
+  option 2, 6 distinct, redistribute          0.026  0.000    0.442   1.28
+  option 3, independent draws                 0.999  0.004    0.327   1.58
+  option 3, evenly spaced draw                1.002  0.004    0.333   1.54
+  option 2 adaptive                           1.003  0.003    0.456   1.25
+
+ miner: 20% as 1 address
+  scheme                                    EV/fair     +-  P(paid)     CV
+  option 1 (top + 1 random)                   1.000  0.000    1.000   0.00
+  option 2 fixed, 6 independent draws         1.000  0.000    1.000   0.00
+  option 2 fixed, 6 evenly spaced             1.000  0.000    1.000   0.00
+  option 2, 6 distinct, equal prizes          1.000  0.000    1.000   0.00
+  option 2, 6 distinct, pro rata              1.000  0.000    1.000   0.00
+  option 2, 6 distinct, redistribute          1.290  0.000    1.000   0.02
+  option 3, independent draws                 1.000  0.001    0.945   0.55
+  option 3, evenly spaced draw                1.000  0.000    1.000   0.19
+  option 2 adaptive                           1.000  0.000    1.000   0.00
+
+ miner: 20% as 20 addresses
+  scheme                                    EV/fair     +-  P(paid)     CV
+  option 1 (top + 1 random)                   0.999  0.002    0.537   0.93
+  option 2 fixed, 6 independent draws         0.998  0.001    0.961   0.48
+  option 2 fixed, 6 evenly spaced             1.000  0.001    0.972   0.45
+  option 2, 6 distinct, equal prizes          1.007  0.001    0.972   0.45
+  option 2, 6 distinct, pro rata              0.958  0.001    0.973   0.51
+  option 2, 6 distinct, redistribute          0.215  0.000    0.972   0.45
+  option 3, independent draws                 1.002  0.001    0.945   0.55
+  option 3, evenly spaced draw                0.998  0.001    0.967   0.48
+  option 2 adaptive                           1.000  0.001    0.988   0.41
+
+ miner: 20% as 400 addresses
+  scheme                                    EV/fair     +-  P(paid)     CV
+  option 1 (top + 1 random)                   1.001  0.002    0.538   0.93
+  option 2 fixed, 6 independent draws         0.999  0.001    0.962   0.48
+  option 2 fixed, 6 evenly spaced             1.000  0.001    0.967   0.46
+  option 2, 6 distinct, equal prizes          1.039  0.001    0.972   0.45
+  option 2, 6 distinct, pro rata              0.140  0.001    0.972   1.91
+  option 2, 6 distinct, redistribute          0.012  0.000    0.972   0.47
+  option 3, independent draws                 1.000  0.001    0.945   0.56
+  option 3, evenly spaced draw                1.001  0.001    0.960   0.51
+  option 2 adaptive                           0.998  0.001    0.986   0.43
+
+=== B. crowd-out: what a 30% miner's split does to honest miners ===
+   cap scheme                           30% miner as  prize%  honest paid exactly  honest raffle variance
+    13 option 1 (top + 1 random)           1 address   29.57                   11                 0.08664
+    13 option 1 (top + 1 random)        13 addresses   52.44                    4                 0.21175
+    13 option 1 (top + 1 random)       500 addresses   55.95                   12                 0.14453
+    13 option 2 fixed, 6 evenly spaced      1 address    6.13                    6                 0.02074
+    13 option 2 fixed, 6 evenly spaced   13 addresses   10.66                    4                 0.04091
+    13 option 2 fixed, 6 evenly spaced  500 addresses   10.53                    7                 0.03319
+    13 option 3, evenly spaced draw        1 address    7.69                    3                 0.03119
+    13 option 3, evenly spaced draw     13 addresses    7.69                    3                 0.03118
+    13 option 3, evenly spaced draw    500 addresses    7.69                    3                 0.03044
+    13 option 2 adaptive                   1 address    5.06                    3                 0.01824
+    13 option 2 adaptive                13 addresses    7.55                    3                 0.02955
+    13 option 2 adaptive               500 addresses    7.42                    3                 0.02738
+    60 option 1 (top + 1 random)           1 address   16.48                   58                 0.02711
+    60 option 1 (top + 1 random)        60 addresses   32.80                   19                 0.07455
+    60 option 1 (top + 1 random)       500 addresses   43.35                   59                 0.05781
+    60 option 2 fixed, 30 evenly spaced      1 address    0.66                   29                 0.00120
+    60 option 2 fixed, 30 evenly spaced   60 addresses    1.58                   19                 0.00338
+    60 option 2 fixed, 30 evenly spaced  500 addresses    1.56                   30                 0.00251
+    60 option 3, evenly spaced draw        1 address    1.67                    6                 0.00453
+    60 option 3, evenly spaced draw     60 addresses    1.67                    7                 0.00448
+    60 option 3, evenly spaced draw    500 addresses    1.67                    7                 0.00405
+    60 option 2 adaptive                   1 address    0.58                   19                 0.00111
+    60 option 2 adaptive                60 addresses    1.21                   12                 0.00277
+    60 option 2 adaptive               500 addresses    1.17                   12                 0.00234

@@ -1,0 +1,78 @@
+=== A. the pool: 56 miners, 250 TH/s, 50 pool blocks a day ===
+  device    count  TH/s each  share of pool each  class share of pool  blocks found a day
+  S19           2       95.0              37.98%                76.0%                38.0
+  Hex           2        3.2               1.28%                 2.6%                 1.3
+  GT            4        2.1               0.84%                 3.4%                 1.7
+  Gamma        27        1.2               0.48%                13.0%                 6.5
+  Supra        12        0.7               0.28%                 3.4%                 1.7
+  Ultra         9        0.5               0.20%                 1.8%                 0.9
+  Bitaxes together: 54 devices, 24.0% of the pool
+
+=== B. outputs that fit, by device (taproot-size outputs of 43 bytes beside a 47-byte witness commitment) ===
+  S19-class firmware, from the job-message caps in simulation 09:
+    merkle branches  transactions  3,072-byte build  5,120-byte build
+                  0             1                23                71
+                  2       up to 4                22                70
+                  4      up to 16                20                68
+                  6      up to 64                19                67
+                 13   up to 8,192                14                61
+  Bitaxe (ESP-Miner): stratum line limit 16 KiB; a coinb2 of about 5 KB is reported to work,
+  a job line of 14-15.5 KB to stall. 5 KB is about 115 taproot-size outputs; this run uses 110.
+
+=== C. each option: payouts a day / hours between payouts / spread of one day's income (sd / mean) ===
+  no cap: every miner is paid 50 times a day; spread of a day's income 14%, of a week's 5%
+
+ cap 13
+  scheme                             N+M  prize% exact                    S19                    Hex                     GT                  Gamma                  Supra                  Ultra  raffle var
+  option 1 (top + 1 random)       12+1     16.19    12    50.0 /  0.5 h /  14%    50.0 /  0.5 h /  14%    50.0 /  0.5 h /  14%     1.5 / 16.2 h /  82%     0.9 / 27.8 h / 108%     0.6 / 38.9 h / 127%     0.02556
+                                paid exactly: only 4 of 27 Gamma; the rows show one left in the raffle
+  option 3, evenly spaced draw     0+13     7.69     2    50.0 /  0.5 h /  14%     8.3 /  2.9 h /  35%     5.5 /  4.4 h /  43%     3.1 /  7.7 h /  57%     1.8 / 13.2 h /  74%     1.3 / 18.5 h /  88%     0.01781
+  option 2 adaptive                2+11     2.18     2    50.0 /  0.5 h /  14%    29.3 /  0.8 h /  18%    19.2 /  1.2 h /  23%    11.0 /  2.2 h /  30%     6.4 /  3.7 h /  40%     4.6 /  5.2 h /  47%     0.00389
+
+ cap 20
+  scheme                             N+M  prize% exact                    S19                    Hex                     GT                  Gamma                  Supra                  Ultra  raffle var
+  option 1 (top + 1 random)       19+1     12.83    19    50.0 /  0.5 h /  14%    50.0 /  0.5 h /  14%    50.0 /  0.5 h /  14%     1.9 / 12.8 h /  73%     1.1 / 22.0 h /  96%     0.8 / 30.8 h / 113%     0.01598
+                                paid exactly: only 11 of 27 Gamma; the rows show one left in the raffle
+  option 3, evenly spaced draw     0+20     5.00     2    50.0 /  0.5 h /  14%    12.8 /  1.9 h /  28%     8.4 /  2.9 h /  35%     4.8 /  5.0 h /  46%     2.8 /  8.6 h /  60%     2.0 / 12.0 h /  71%     0.01186
+  option 2 adaptive                2+18     1.34     2    50.0 /  0.5 h /  14%    47.9 /  0.5 h /  14%    31.4 /  0.8 h /  18%    18.0 /  1.3 h /  24%    10.5 /  2.3 h /  31%     7.5 /  3.2 h /  37%     0.00185
+
+ cap 60
+  scheme                             N+M  prize% exact                    S19                    Hex                     GT                  Gamma                  Supra                  Ultra  raffle var
+  option 1 (top + 1 random)       59+1      0.00    56    50.0 /  0.5 h /  14%    50.0 /  0.5 h /  14%    50.0 /  0.5 h /  14%    50.0 /  0.5 h /  14%    50.0 /  0.5 h /  14%    50.0 /  0.5 h /  14%     0.00000
+  option 3, evenly spaced draw     0+60     1.67     2    50.0 /  0.5 h /  14%    38.4 /  0.6 h /  16%    25.2 /  1.0 h /  20%    14.4 /  1.7 h /  26%     8.4 /  2.9 h /  35%     6.0 /  4.0 h /  41%     0.00274
+  option 2 adaptive               56+4      0.00    56    50.0 /  0.5 h /  14%    50.0 /  0.5 h /  14%    50.0 /  0.5 h /  14%    50.0 /  0.5 h /  14%    50.0 /  0.5 h /  14%    50.0 /  0.5 h /  14%     0.00000
+
+  spread of one week's income (sd / mean), option 2 adaptive:
+  cap  13  S19 5%  Hex 7%  GT 9%  Gamma 11%  Supra 15%  Ultra 18%
+  cap  20  S19 5%  Hex 5%  GT 7%  Gamma 9%  Supra 12%  Ultra 14%
+  cap  60  S19 5%  Hex 5%  GT 5%  Gamma 5%  Supra 5%  Ultra 5%
+  chance of no payout in a day, smallest Bitaxe present:
+  cap  13  option 1 (top + 1 random) 53.94%;  option 3, evenly spaced draw 27.27%;  option 2 adaptive 1.03%
+  cap  20  option 1 (top + 1 random) 45.89%;  option 3, evenly spaced draw 13.54%;  option 2 adaptive 0.06%
+  cap  60  option 1 (top + 1 random) 0.00%;  option 3, evenly spaced draw 0.25%;  option 2 adaptive 0.00%
+
+=== D. coinbase sized by the finder: Bitaxes find 24.0% of blocks and carry 56 outputs; S19-found blocks are capped ===
+  S19 blocks capped at                        S19                    Hex                     GT                  Gamma                  Supra                  Ultra
+  13, every block (no choice)    50.0 /  0.5 h /  14%    29.3 /  0.8 h /  18%    19.2 /  1.2 h /  23%    11.0 /  2.2 h /  30%     6.4 /  3.7 h /  40%     4.6 /  5.2 h /  47%
+  13, Bitaxe blocks carry all    50.0 /  0.5 h /  14%    34.3 /  0.7 h /  18%    26.6 /  0.9 h /  21%    20.4 /  1.2 h /  27%    16.9 /  1.4 h /  35%    15.5 /  1.5 h /  41%
+  20, every block (no choice)    50.0 /  0.5 h /  14%    47.9 /  0.5 h /  14%    31.4 /  0.8 h /  18%    18.0 /  1.3 h /  24%    10.5 /  2.3 h /  31%     7.5 /  3.2 h /  37%
+  20, Bitaxe blocks carry all    50.0 /  0.5 h /  14%    48.4 /  0.5 h /  14%    35.9 /  0.7 h /  17%    25.7 /  0.9 h /  22%    20.0 /  1.2 h /  28%    17.7 /  1.4 h /  33%
+
+=== E. variants: payouts a day / hours between payouts / spread of one day's income, smallest Bitaxe ===
+
+ 1 S19 + 155 TH/s of Bitaxes: 150 miners, S19s hold 38% of the pool, smallest Bitaxe 0.20%
+  scheme                                                    cap 13                            cap 20                            cap 60                           cap 110
+  option 1 (top + 1 random)            12+1:   0.2 /125.2 h / 228%       19+1:   0.2 /117.1 h / 221%       59+1:   0.3 / 71.0 h / 172%      109+1:   1.1 / 22.6 h /  97%
+  option 3, evenly spaced draw         0+13:   1.3 / 18.5 h /  88%       0+20:   2.0 / 12.0 h /  71%       0+60:   6.0 /  4.0 h /  41%      0+110:  11.0 /  2.2 h /  30%
+  option 2 adaptive                    1+12:   1.9 / 12.4 h /  72%       1+19:   3.1 /  7.8 h /  57%       5+55:   9.7 /  2.5 h /  32%      9+101:  18.8 /  1.3 h /  23%
+
+ 2 S19s + 120 Bitaxe Ultras: 122 miners, S19s hold 76% of the pool, smallest Bitaxe 0.20%
+  scheme                                                    cap 13                            cap 20                            cap 60                           cap 110
+  option 1 (top + 1 random)            12+1:   0.5 / 52.8 h / 148%       19+1:   0.5 / 49.4 h / 144%       59+1:   0.8 / 30.2 h / 112%      109+1:   3.8 /  6.2 h /  51%
+  option 3, evenly spaced draw         0+13:   1.3 / 18.5 h /  88%       0+20:   2.0 / 12.0 h /  71%       0+60:   6.0 /  4.0 h /  41%      0+110:  11.0 /  2.2 h /  30%
+  option 2 adaptive                    2+11:   4.6 /  5.2 h /  47%       2+18:   7.5 /  3.2 h /  37%       2+58:  24.2 /  1.0 h /  20%      2+108:  45.0 /  0.5 h /  15%
+
+=== F. Monte Carlo check, base pool, cap 13, 200,000 blocks: paid / fair share by class ===
+  option 1 (top + 1 random)     S19 1.000   Gamma 0.999   Ultra 0.999   all Bitaxes 1.000
+  option 3, evenly spaced draw  S19 1.000   Gamma 1.000   Ultra 1.004   all Bitaxes 1.000
+  option 2 adaptive             S19 1.000   Gamma 1.001   Ultra 1.000   all Bitaxes 1.000

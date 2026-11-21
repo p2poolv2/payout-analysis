@@ -1,0 +1,75 @@
+Relative revenue gain for the attacker. 'tip choice' lets it pick among the current tip and
+1 or 3 older ones; a share on an older tip loses 10% of its value.
+
+=== A. all options at caps 13 and 60 ===
+
+ cap 13
+  attacker              scheme                          prize%  tip choice (1)  tip choice (3)  withholding
+  20%, 1 address        option 1 (top + 1 random)        33.79           0.00%           0.00%        0.00%
+  20%, 1 address        option 2 fixed, 6 evenly spaced    7.01           0.00%           0.00%        0.00%
+  20%, 1 address        option 3, evenly spaced draw      7.69           0.00%           0.00%        0.00%
+  20%, 1 address        option 2 adaptive                 5.79           0.00%           0.00%        0.00%
+  20% in 400 addresses  option 1 (top + 1 random)        50.48           9.69%          19.09%       11.01%
+  20% in 400 addresses  option 2 fixed, 6 evenly spaced    9.77           2.41%           5.32%        2.77%
+  20% in 400 addresses  option 3, evenly spaced draw      7.69           2.20%           4.83%        2.48%
+  20% in 400 addresses  option 2 adaptive                 7.10           1.94%           4.28%        2.20%
+  5% in 50 addresses    option 1 (top + 1 random)        43.16           3.44%           9.10%        3.57%
+  5% in 50 addresses    option 2 fixed, 6 evenly spaced    8.75           0.51%           1.41%        0.54%
+  5% in 50 addresses    option 3, evenly spaced draw      7.69           0.51%           1.37%        0.52%
+  5% in 50 addresses    option 2 adaptive                 6.67           0.41%           1.09%        0.42%
+  1.5%, 1 address       option 1 (top + 1 random)        41.34           1.10%           3.21%        1.14%
+  1.5%, 1 address       option 2 fixed, 6 evenly spaced    8.49           0.00%           0.00%        0.00%
+  1.5%, 1 address       option 3, evenly spaced draw      7.69           0.00%           0.00%        0.00%
+  1.5%, 1 address       option 2 adaptive                 6.56           0.00%           0.00%        0.00%
+
+ cap 60
+  attacker              scheme                          prize%  tip choice (1)  tip choice (3)  withholding
+  20%, 1 address        option 1 (top + 1 random)        18.84           0.00%           0.00%        0.00%
+  20%, 1 address        option 2 fixed, 30 evenly spaced    0.75           0.00%           0.00%        0.00%
+  20%, 1 address        option 3, evenly spaced draw      1.67           0.00%           0.00%        0.00%
+  20%, 1 address        option 2 adaptive                 0.66           0.00%           0.00%        0.00%
+  20% in 400 addresses  option 1 (top + 1 random)        36.31           6.51%          10.75%        7.16%
+  20% in 400 addresses  option 2 fixed, 30 evenly spaced    1.34           0.05%           0.12%        0.05%
+  20% in 400 addresses  option 3, evenly spaced draw      1.67           0.13%           0.35%        0.15%
+  20% in 400 addresses  option 2 adaptive                 1.05           0.03%           0.07%        0.03%
+  5% in 50 addresses    option 1 (top + 1 random)        26.90           2.54%           6.33%        2.67%
+  5% in 50 addresses    option 2 fixed, 30 evenly spaced    1.04           0.00%           0.00%        0.00%
+  5% in 50 addresses    option 3, evenly spaced draw      1.67           0.00%           0.01%        0.00%
+  5% in 50 addresses    option 2 adaptive                 0.88           0.00%           0.00%        0.00%
+  1.5%, 1 address       option 1 (top + 1 random)        23.20           0.00%           0.00%        0.00%
+  1.5%, 1 address       option 2 fixed, 30 evenly spaced    0.93           0.00%           0.00%        0.00%
+  1.5%, 1 address       option 3, evenly spaced draw      1.67           0.00%           0.00%        0.00%
+  1.5%, 1 address       option 2 adaptive                 0.81           0.00%           0.00%        0.00%
+
+=== A2. a small miner on one address, in the raffle under every option (0.5% of the pool, cap 13) ===
+  scheme                          prize%  tip choice (3)  withholding
+  option 1 (top + 1 random)        40.74           1.03%        0.39%
+  option 2 fixed, 6 evenly spaced    8.41           0.00%        0.00%
+  option 3, evenly spaced draw      7.69           0.00%        0.00%
+  option 2 adaptive                 6.52           0.00%        0.00%
+
+=== B. option 2 adaptive across caps ===
+   cap                attacker  prize%  extra wins needed  tip choice (3)  withholding
+    11    20% in 400 addresses    8.87                  2           5.25%        2.67%
+    11      5% in 50 addresses    8.34                  2           1.45%        0.54%
+    13    20% in 400 addresses    7.10                  2           4.30%        2.21%
+    13      5% in 50 addresses    6.67                  2           1.09%        0.42%
+    14    20% in 400 addresses    6.45                  2           3.88%        1.99%
+    14      5% in 50 addresses    6.04                  2           0.92%        0.36%
+    16    20% in 400 addresses    5.46                  2           3.07%        1.55%
+    16      5% in 50 addresses    5.03                  2           0.52%        0.19%
+    19    20% in 400 addresses    4.36                  3           2.31%        1.12%
+    19      5% in 50 addresses    4.02                  3           0.36%        0.13%
+    25    20% in 400 addresses    3.12                  4           1.39%        0.64%
+    25      5% in 50 addresses    2.87                  4           0.13%        0.05%
+    60    20% in 400 addresses    1.05                 10           0.07%        0.03%
+    60      5% in 50 addresses    0.88                 12           0.00%        0.00%
+   100    20% in 400 addresses    0.55                 19           0.00%        0.00%
+   100      5% in 50 addresses    0.44                 23           0.00%        0.00%
+
+=== C. effect of the uncle penalty at cap 13 (tip choice among 3 older tips + withholding) ===
+  attacker              scheme                                 penalty 10%         penalty 15%         penalty 20%
+  20% in 400 addresses  option 1 (top + 1 random)          19.06% + 11.01%      16.71% + 9.65%      14.37% + 8.28%
+  20% in 400 addresses  option 2 adaptive                    4.29% + 2.20%       2.30% + 1.04%       1.18% + 0.51%
+  5% in 50 addresses    option 1 (top + 1 random)            9.16% + 3.59%       7.78% + 3.02%       6.40% + 2.48%
+  5% in 50 addresses    option 2 adaptive                    1.09% + 0.42%       0.26% + 0.09%       0.03% + 0.01%
