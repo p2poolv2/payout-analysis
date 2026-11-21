@@ -16,6 +16,8 @@ sims/NN-name/run.py           the simulation
 sims/NN-name/output.txt       its output, as used in the report
 run_all.sh                    re-run everything
 xmr/                          hashrate distribution on Monero P2Pool (live data)
+testnet5/                     hashrate distribution on testnet5, from block coinbases
+lib/hashrate_fit.py           shared statistics, lognormal/log-logistic count fits, plots
 ```
 
 ## Simulations
