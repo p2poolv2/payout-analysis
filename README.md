@@ -15,6 +15,7 @@ sims/NN-name/README.md        what the simulation asks, how to run it, what it f
 sims/NN-name/run.py           the simulation
 sims/NN-name/output.txt       its output, as used in the report
 run_all.sh                    re-run everything
+xmr/                          hashrate distribution on Monero P2Pool (live data)
 ```
 
 ## Simulations
